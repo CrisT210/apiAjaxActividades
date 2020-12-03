@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let num = 0;
+            for(let i=1; i<=151; i++){
+                num = i;
+                $('.listado').append('<img id="'+ num +'" class="border border-danger bg-dark mb-1 ml-1" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/'+ num +'.png">');
+            };
+            $('img').on('click', function(){
+                let id = $(this).attr('id');
+                $.get("https://pokeapi.co/api/v2/pokemon/" + id, function(res) {
+                    let modal = "";
+                    modal += "<img src='Info.png' class='mx-auto d-block col'>";
+                    modal += "<h4 class='name-pokemon text-white'>"+res.id+". "+ res.name + "</h4>";
+                    modal += "<h5 class='altura'>Altura: " + res.height + "</h5>";
+                    modal += "<h5 class='peso'>Peso: " + res.weight + "</h5>";
+                    modal += "<img class='img-pokemon' src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/" + res.id + ".png'>";
+                    modal += "<h4 class='tipos'>Tipos:</h4>";
+                    modal += "<ul class='tipo-pokemon'>";
+                    for(let i = 0; i < res.types.length; i++) {
+                        modal += "<li>" + res.types[i].type.name + "</li>";
+                    };
+                    modal += "</ul>";
+                    $("#myModal").modal("show");
+                    $("#info").html(modal);
+                }, "json");
+            });
+        });
+    </script>
+    <title>Pokedex</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="row">
+            <img src="Pokemon-logo.png" class="mx-auto d-block">
+            <div id="datos"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-start listado"></div>
+    </div>
+      
+      <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">     
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">INFO</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body p-0">
+                    <div id="info" class="row">
+                            
+                    </div>     
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

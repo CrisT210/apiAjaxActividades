@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.name-pokemon{
+    position: absolute;
+    top: 40px;
+    left: 300px;
+}
+.img-pokemon{
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    top: 30px;
+    left: 25px;
+}
+.tipos{
+    position: absolute;
+    top: 270px;
+    left: 100px;
+}
+.tipo-pokemon{
+    position: absolute;
+    top: 270px;
+    left: 300px;
+}
+.altura{
+    position: absolute;
+    top: 165px;
+    left: 350px;
+}
+.peso{
+    position: absolute;
+    top: 195px;
+    left: 350px;
+}
