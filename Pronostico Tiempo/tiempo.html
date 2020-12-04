@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="funciones.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        hr{
+            background-color:  white;
+        }
+        #icon{
+            width: 100px;
+            height: 100px;
+        }
+        .txtCondicion, .ciudad{
+            text-transform: capitalize;
+        }
+        .coord, .temp{
+            padding: 20px 0;
+        }
+    </style>
+    <title>Pronostico del Tiempo</title>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h3>Pronostico del Tiempo</h3>
+    </div>
+    <div class="container mb-3">
+        <div class="row justify-content-center">
+            <div class="card bg-secondary" style="width:400px">
+                <div class="card-body">
+                    <form>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Ciudad:</span>
+                            </div>
+                            <input type="text" id="ciudad" class="form-control" placeholder="Ingrese ciudad" required>
+                        </div>
+                        <button id="enviar" type="submit" class="btn btn-success">Consultar</button>
+                    </form>    
+                </div>
+                <div id="datos" class="container text-center text-white pb-3">
+                </div>
+            </div>
+        </div>
+    </div>   
+</body>
+</html>
+
+
