@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="funciones.js"></script>
+    <title>Casas Game of Thrones</title>
+</head>
+<body>
+    <div class="jumbotron rounded-0 bg-dark">
+        <img class="d-block mx-auto w-50 col" src="img/Game-of-Thrones-Logo.png">
+    </div>
+    <div class="container-fluid">
+        <h1 class="display-4 text-center">Selecciona la casa para saber mas informacion</h1>
+        <hr>
+        <div class="row">
+            <input id="229" type="image" class="col-lg-2" src="img/lannister.jpg">
+            <input id="362" type="image" class="col-lg-2" src="img/stark.jpg">
+            <input id="378" type="image" class="col-lg-2" src="img/targaryen.jpg">
+            <input id="395" type="image" class="col-lg-2" src="img/tully.jpg">
+            <input id="169" type="image" class="col-lg-2" src="img/greyjoy.jpg">
+            <input id="398" type="image" class="col-lg-2" src="img/tyrell.jpg">
+        </div>
+        <div class="row">  
+            <input id="34" type="image" class="col-lg-2" src="img/bolton.jpg">
+            <input id="17" type="image" class="col-lg-2" src="img/baratheon.jpg">
+            <input id="7" type="image" class="col-lg-2" src="img/arryn.jpg">
+            <input id="271" type="image" class="col-lg-2" src="img/mormont.jpg">
+            <input id="143" type="image" class="col-lg-2" src="img/frey.jpg">
+            <input id="285" type="image" class="col-lg-2" src="img/martell.jpg">
+        </div>
+    </div>
+
+    <!--Modal Informacion Casa-->
+    <div class="modal" id="infoModal">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content bg-secondary">
+      
+                <!-- Modal Header -->
+                <div id="name" class="modal-header text-white"></div>
+      
+                <!-- Modal body -->
+                <div id="info" class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
